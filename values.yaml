@@ -1,0 +1,12 @@
+apps:
+  haproxy-ingress:
+    chart: haproxy-ingress
+    repo: https://haproxy-ingress.github.io/charts
+    targetRevision: ">=0-0"
+    path: ./
+  cert-manager:
+    chart: cert-manager
+    targetRevision: ">=0-0"
+    repo: https://charts.jetstack.io
+    parameters:
+      installCRDs: true
