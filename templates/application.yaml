@@ -1,1 +1,31 @@
-
+{{- range $name,  $apps := .Values.apps }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $name }}
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+  {{- with . }}
+    chart: {{.chart }}
+    path: {{ .path |default "./" | quote }}
+    repoURL: {{ .repo }}
+    targetRevision: '>=0-0'
+  {{- end }}
+    helm:
+     {{- if .parameters }}
+      parameters:
+      {{- range $k,$v :=  .parameters }}
+      - name: {{$k}}
+        value: {{$v |quote }}
+     {{- end }}
+    {{- end }}
+  sources: []
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+{{- end }}
