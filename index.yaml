@@ -2,10 +2,10 @@ apiVersion: v1
 entries:
   argocd:
   - apiVersion: v2
-    created: "2024-05-02T15:37:15.855561+03:00"
+    created: "2024-05-02T15:40:50.029731+03:00"
     digest: 7dd551f3240f2c186eef97a306436c3696d26ee822901e92ade305b2fe46ba93
     name: argocd
     urls:
-    - argocd-0.1.0.tgz
+    - https://github.com/Elyasaflehrer/helm-registry.git/argocd-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-02T15:37:15.855076+03:00"
+generated: "2024-05-02T15:40:50.029147+03:00"
