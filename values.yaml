@@ -4,9 +4,23 @@ apps:
     repo: https://haproxy-ingress.github.io/charts
     targetRevision: ">=0-0"
     path: ./
+    type: helm
   cert-manager:
     chart: cert-manager
     targetRevision: ">=0-0"
     repo: https://charts.jetstack.io
+    type: helm
     parameters:
       installCRDs: true
+  argo-cd:
+    chart: argo-cd
+    repo: https://argoproj.github.io/argo-helm
+    targetRevision: ">=0-0"
+    path: ./
+    type: helm
+  argocd-apps:
+    chart: argocd-apps
+    repo: https://argoproj.github.io/argo-helm
+    targetRevision: ">=0-0"
+    path: ./
+    type: helm
