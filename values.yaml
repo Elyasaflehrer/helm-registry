@@ -14,7 +14,7 @@ apps:
     type: helm
     parameters:
       installCRDs: true
-  argo-cd:
+  argocd:
     namespace: argocd
     chart: argo-cd
     repo: https://argoproj.github.io/argo-helm
