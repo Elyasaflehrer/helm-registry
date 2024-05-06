@@ -28,3 +28,10 @@ apps:
     targetRevision: ">=0-0"
     path: ./
     type: helm
+  kubernetes-dashboard:
+    namespace: kubernetes-dashboard
+    chart: kubernetes-dashboard
+    repo: https://kubernetes.github.io/dashboard/
+    targetRevision: ">=0-0"
+    path: ./
+    type: helm
